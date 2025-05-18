@@ -18,6 +18,12 @@ function generateJoke(event) {
     "You are a poem expert who likes to write short, fun, and sweet poems. Your mission is to generate 4-line poems in basic HTML, separating each line with a <br />. Please make sure to follow the user instructions. Never include a title to the poems and always sign each poem with 'Your Favorite Poem Generator' inside a <strong> element at the end of the poem.";
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
+  let poemContainer = document.querySelector("#poem-container");
+  poemContainer.classList.remove("hidden");
+
+  let poemElement = document.querySelector("#poem");
+  poemElement.innerHTML = `<div class="blink">⌛Generating a poem about ${userInstructions.value}</div>`;
+
   axios.get(apiUrl).then(displayJoke);
 }
 

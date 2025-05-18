@@ -18,7 +18,7 @@
           <form id="poem-generator">
             <input
               type="text"
-              placeholder="Enter the topic of the poem..."
+              placeholder="Enter the topic of the poem"
               autofocus
               required
               class="search-bar"
@@ -26,8 +26,11 @@
             />
             <input type="submit" value="Generate Poem" class="submit-button" />
           </form>
+          <small>e.g., flowers, stars, love...</small>
         </div>
-        <div class="poem-container"><p id="poem" class="poem"></p></div>
+        <div class="poem-container hidden" id="poem-container">
+          <p id="poem" class="poem"></p>
+        </div>
       </main>
       <footer>
         <p>
